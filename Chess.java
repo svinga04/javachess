@@ -29,4 +29,5 @@ public class Chess extends JFrame implements MouseListener{
     public static void main(String[] args){
         new Chess();
     }
+    
 }
