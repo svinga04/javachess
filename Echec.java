@@ -1,4 +1,4 @@
-//toto est à la plage
+//toto est à la plage et il s'amuse
 
 import javax.swing.*;
 import java.awt.*;
