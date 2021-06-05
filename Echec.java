@@ -79,6 +79,10 @@ public class Echec extends JFrame implements ActionListener, MouseListener {
     public void mouseClicked(MouseEvent e) {
         // TODO Auto-generated method stub
         
+
+
+
+        
         for(int i=0; i<2;i++){
             for(int j=0;j<16;j++){   
                 if(pions[i][j].contain(e.getX(), e.getY())){
