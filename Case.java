@@ -1,5 +1,5 @@
 public class Case {
-    int x, y;
+    int x, y;   //Position sur l'échiquier
     Pion cont;
 
     public Case(int px, int py){

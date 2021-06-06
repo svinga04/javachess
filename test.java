@@ -14,10 +14,10 @@ public class test extends JFrame implements MouseListener{
         super("Chess");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(800, 100, 600, 600);
-        X_plateau = 50; Y_plateau = 100; isSelected = false;
+        X_plateau = 100; Y_plateau = 100; isSelected = false;
         plat =Toolkit.getDefaultToolkit().getImage("plateau.png");
 
-        // Construit le plateau
+        // Construction du plateau
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
                 plateau[i][j] = new Case(i,j);
