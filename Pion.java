@@ -17,7 +17,8 @@ public class Pion {
     }
 
     public void select(){
-        c = Color.BLUE;
+        if(c.equals(Color.BLUE)) c = Color.BLACK;
+        else c = Color.BLUE;
     }
 
     public void draw(Graphics g, Component t, int pX, int pY){

@@ -54,6 +54,7 @@ public class test extends JFrame implements MouseListener{
             }
         }
         else{
+            plateau[temp_i][temp_j].getContent().select();
             plateau[temp_i][temp_j].getContent().setPos(i, j);
             plateau[i][j].setContent(plateau[temp_i][temp_j].getContent());
             plateau[temp_i][temp_j].setContent(null);
