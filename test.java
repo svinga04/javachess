@@ -37,8 +37,12 @@ public class test extends JFrame implements MouseListener{
     }
 
     public void mouseClicked(MouseEvent ae){
+        if(ae.getX()<X_plateau || ae.getX()>X_plateau+400) return;  //Clic en dehors du plateau
+        if(ae.getY()<Y_plateau || ae.getY()>Y_plateau+400) return;
+
         int i = (ae.getX()-X_plateau)/50;
         int j = (ae.getY()-Y_plateau)/50;
+
         System.out.println("Debut:"+isSelected);
 
         if(!isSelected){
