@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class test extends JFrame implements MouseListener{
     Image plat;
     Case[][] plateau = new Case[8][8];
-    Pion[] p = new Pion[8];
+    //Pion[] p = new Pion[8];
     int X_plateau, Y_plateau;
     boolean isSelected; 
     int temp_i, temp_j;
@@ -25,8 +25,8 @@ public class test extends JFrame implements MouseListener{
         }
 
         for(int i=0; i<8; i++){
-            p[i] = new Pion();
-            plateau[i][1].setContent(p[i]);
+            //p[i] = new Pion();
+            plateau[i][1].setContent(new Pion());
         }
 
         //
@@ -54,10 +54,11 @@ public class test extends JFrame implements MouseListener{
             }
         }
         else{
-            plateau[temp_i][temp_j].select();
             plateau[i][j].setContent(plateau[temp_i][temp_j].getContent());
             plateau[temp_i][temp_j].setContent(null);
+
             isSelected = false;
+            plateau[temp_i][temp_j].select();
             repaint();
         }
 
@@ -70,6 +71,7 @@ public class test extends JFrame implements MouseListener{
     public void mouseExited(MouseEvent ae){}
 
     public void paint(Graphics g){
+        g.setColor(Color.RED);
         g.drawImage(plat, X_plateau, Y_plateau, this);
 
         for(int i=0; i<8; i++){

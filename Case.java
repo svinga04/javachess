@@ -12,14 +12,10 @@ public class Case {
         iselect = false;
     }
 
-    public boolean pion_In(){return cont != null;}
+    public void setContent(Pion p){cont = p;}
+    public Pion getContent(){return cont;}
 
-    public void setContent(Pion p){
-        cont = p;
-    }
-    public Pion getContent(){
-        return cont;
-    }
+    public boolean pion_In(){return cont != null;}
 
     public void select(){
         iselect = !iselect;
