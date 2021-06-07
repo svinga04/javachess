@@ -25,7 +25,7 @@ public class test extends JFrame implements MouseListener{
         }
 
         for(int i=0; i<8; i++){
-            p[i] = new Pion(i,1);
+            p[i] = new Pion();
             plateau[i][1].setContent(p[i]);
         }
 
@@ -49,13 +49,12 @@ public class test extends JFrame implements MouseListener{
             if(plateau[i][j].pion_In()){
                 isSelected = true;
                 temp_i = i; temp_j = j;
-                plateau[i][j].getContent().select();
+                plateau[i][j].select();
                 repaint();
             }
         }
         else{
-            plateau[temp_i][temp_j].getContent().select();
-            plateau[temp_i][temp_j].getContent().setPos(i, j);
+            plateau[temp_i][temp_j].select();
             plateau[i][j].setContent(plateau[temp_i][temp_j].getContent());
             plateau[temp_i][temp_j].setContent(null);
             isSelected = false;
@@ -72,9 +71,11 @@ public class test extends JFrame implements MouseListener{
 
     public void paint(Graphics g){
         g.drawImage(plat, X_plateau, Y_plateau, this);
-        
+
         for(int i=0; i<8; i++){
-            p[i].draw(g, this, X_plateau, Y_plateau);
+            for(int j=0; j<8; j++){
+                plateau[i][j].draw(g, this, X_plateau, Y_plateau);
+            }
         }
     }
 
