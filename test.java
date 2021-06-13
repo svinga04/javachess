@@ -5,17 +5,17 @@ import java.awt.event.*;
 public class test extends JFrame implements MouseListener{
     Image plat;
     Case[][] plateau = new Case[8][8];
-    //Pion[] p = new Pion[8];
     int X_plateau, Y_plateau;
+
     boolean isSelected; 
     int temp_i, temp_j;
     
     public test(){
         super("Chess");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setBounds(800, 100, 600, 600);
+        setBounds(400, 100, 600, 600);
         X_plateau = 100; Y_plateau = 100; isSelected = false;
-        plat =Toolkit.getDefaultToolkit().getImage("plateau.png");
+        plat =Toolkit.getDefaultToolkit().getImage("./img/plateau.png");
 
         // Construction du plateau
         for(int i=0; i<8; i++){
@@ -24,10 +24,24 @@ public class test extends JFrame implements MouseListener{
             }
         }
 
-        for(int i=0; i<8; i++){
-            //p[i] = new Pion();
-            plateau[i][1].setContent(new Pion());
+        for(int i=0; i<8; i++){     //pions blancs et noirs
+            plateau[i][1].setContent(new Petitpion("blanc"));
+            plateau[i][6].setContent(new Petitpion("noir"));
         }
+
+        //Blanc
+        plateau[0][0].setContent(new Tour("blanc")); plateau[7][0].setContent(new Tour("blanc"));
+        plateau[1][0].setContent(new Cavalier("blanc")); plateau[6][0].setContent(new Cavalier("blanc"));
+        plateau[2][0].setContent(new Fou("blanc")); plateau[5][0].setContent(new Fou("blanc"));
+        plateau[3][0].setContent(new Roi("blanc"));     //Roi blanc
+        plateau[4][0].setContent(new Dame("blanc"));      //Dame blanc
+
+        //Noir
+        plateau[0][7].setContent(new Tour("noir")); plateau[7][7].setContent(new Tour("noir"));
+        plateau[1][7].setContent(new Cavalier("noir")); plateau[6][7].setContent(new Cavalier("noir"));
+        plateau[2][7].setContent(new Fou("noir")); plateau[5][7].setContent(new Fou("noir"));
+        plateau[3][7].setContent(new Roi("noir"));     //Roi blanc
+        plateau[4][7].setContent(new Dame("noir"));
 
         //
 

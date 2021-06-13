@@ -4,12 +4,12 @@ import javax.swing.*;
 public class Case {
     int x, y;   //Position sur l'échiquier
     Pion cont;
-    boolean iselect;
+    boolean selected;
 
     public Case(int px, int py){
         x = px; y = py;
         cont = null;
-        iselect = false;
+        selected = false;
     }
 
     public void setContent(Pion p){cont = p;}
@@ -18,7 +18,7 @@ public class Case {
     public boolean pion_In(){return cont != null;}
 
     public void select(){
-        iselect = !iselect;
+        selected = !selected;
     }
 
     public void draw(Graphics g, Component t, int pX, int pY){
@@ -27,7 +27,7 @@ public class Case {
 
             g.drawImage(cont.getImage(), pX+5+x*50, pY+5+y*50, t);
 
-            if(iselect) g.drawRect(pX+5+x*50, pY+5+y*50, 40, 40);
+            if(selected) g.drawRect(pX+5+x*50, pY+5+y*50, 40, 40);
         }
     }
 
