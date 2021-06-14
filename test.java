@@ -68,12 +68,13 @@ public class test extends JFrame implements MouseListener{
             }
         }
         else{
-            plateau[i][j].setContent(plateau[temp_i][temp_j].getContent());
-            plateau[temp_i][temp_j].setContent(null);
-
-            isSelected = false;
-            plateau[temp_i][temp_j].select();
-            repaint();
+            if(i != temp_i || j != temp_j){
+                plateau[i][j].setContent(plateau[temp_i][temp_j].getContent());
+                plateau[temp_i][temp_j].setContent(null);
+                isSelected = false;
+                plateau[temp_i][temp_j].select();
+                repaint();
+            }
         }
 
         System.out.println("Fin:"+isSelected);
